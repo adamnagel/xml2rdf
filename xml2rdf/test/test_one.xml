@@ -1,0 +1,6 @@
+<root>
+    <with-attrib str="a string" num="4.0">
+        <child-with-text>test text</child-with-text>
+        <child-with-attrib val="test value"/>
+    </with-attrib>
+</root>

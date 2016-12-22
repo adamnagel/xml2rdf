@@ -14,8 +14,11 @@ class Builder(object):
 
     URI_FILE_SCHEMA_ROOT = 'http://this-file.com/schema#'
 
-    def __init__(self):
-        self.g = Graph()
+    def __init__(self, g=None):
+        if g:
+            self.g = g
+        else:
+            self.g = Graph()
 
     def parse(self, xml_file):
         tree = ET.parse(xml_file)
@@ -61,4 +64,3 @@ class Builder(object):
         # Process children
         for child in node.findall('./'):
             self.__parse_node__(child, bnode)
-
